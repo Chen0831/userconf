@@ -1,0 +1,48 @@
+{
+  "server": "0.0.0.0",
+  "local_address": "127.0.0.1",
+  "local_port": 1080,
+  "port_password": {
+    //shadowsockr-r server config
+    "443": {
+      "method": "aes-256-cfb",
+      "password": "ssr-passwd",
+      "protocol": "auth_aes128_md5",
+      "protocol_param": ""
+    },
+    //shadowsocks origin server config
+    "2376": {
+      "method": "aes-256-cfb",
+      "protocol": "origin",//DO NOT CHANGE IT
+      "password": "ss-passwd",
+      "obfs": "plain",//DO NOT CHANGE IT
+      "obfs_param": ""//DO NOT CHANGE IT
+    }
+    //use default ssr param
+    "10000":{
+        "password":"default-param"
+    }
+  },
+  "timeout": 120,
+  "udp_timeout": 60,
+  
+  //default param begin
+  "method": "aes-256-cfb",
+  "protocol": "auth_aes128_sha1",
+  
+  //server side multi user setting
+  "protocol_param": "5#100:user1,200:user2",
+  
+  //client side multi user setting
+  "protocol_param": "100:user1", //or "200:user2"
+  
+  "obfs": "tls1.2_ticket_auth",
+  "obfs_param": "",
+  //default param end
+  
+  "dns_ipv6": false,
+  "connect_verbose_info": 0,
+  //default forward https traffic to local web server
+  "redirect": "127.0.0.1:443",
+  "fast_open": true
+}
