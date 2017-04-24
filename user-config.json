@@ -1,0 +1,44 @@
+{
+  "server": "0.0.0.0",
+  "local_address": "127.0.0.1",
+  "local_port": 1080,
+  "port_password": {
+    "443": {
+      "password": "XlWqASYvPN88Y",
+      "protocol": "auth_sha1_v4",
+      "protocol_param": ""
+    },
+    "3663": {
+      "protocol": "origin",
+      "password": "XlWqASYvPN88Y",
+      "obfs": "plain"
+    },
+
+    "10000":{
+        "password":"default-param"
+		}
+},
+
+  "timeout": 120,
+
+  
+  "method": "aes-128-ctr",
+  "protocol": "auth_sha1_v4",
+  
+  //server side multi user setting
+  "protocol_param": "5#100:user1,200:user2",
+  
+  //client side multi user setting
+  "protocol_param": "100:user1", //or "200:user2"
+  
+  "obfs": "tls1.2_ticket_auth",
+  "obfs_param": "",
+  //default param end
+  
+  "dns_ipv6": false,
+  "connect_verbose_info": 0,
+  //default forward https traffic to local web server
+  "redirect": "",
+  
+   "fast_open": true
+}
